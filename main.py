@@ -21,11 +21,11 @@ def ComputerUsage(navigator, file):
                 line = line.split()
 
                 if line[-1] == 'chrome':
-                    chrome_cpu_usage += float(line[8])
-                    chrome_memory_usage += float(line[9])
+                    chrome_cpu_usage += float(line[8].replace(",", "."))
+                    chrome_memory_usage += float(line[9].replace(",", "."))
                 else:
-                    overral_cpu_usage += float(line[8])
-                    overral_memory_usage += float(line[9])
+                    overral_cpu_usage += float(line[8].replace(",", "."))
+                    overral_memory_usage += float(line[9].replace(",", "."))
 
             #print("Overral CPU usage:", overral_cpu_usage, "Overral Memory usage:", overral_memory_usage)
             #print("Chrome CPU usage:", chrome_cpu_usage, "Chrome Memory usage:", chrome_memory_usage)
@@ -42,11 +42,11 @@ def ComputerUsage(navigator, file):
                 line = line.split()
 
                 if line[-1] == 'firefox':
-                    firefox_cpu_usage += float(line[8])
-                    firefox_memory_usage += float(line[9])
+                    firefox_cpu_usage += float(line[8].replace(",", "."))
+                    firefox_memory_usage += float(line[9].replace(",", "."))
                 else:
-                    overral_cpu_usage += float(line[8])
-                    overral_memory_usage += float(line[9])
+                    overral_cpu_usage += float(line[8].replace(",", "."))
+                    overral_memory_usage += float(line[9].replace(",", "."))
 
             #print("Overral CPU usage:", overral_cpu_usage, "Overral Memory usage:", overral_memory_usage)
             #print("Firefox CPU usage:", firefox_cpu_usage, "Firefox Memory usage:", firefox_memory_usage)
@@ -63,8 +63,8 @@ def ComputerUsage(navigator, file):
 
                 line = line.split()
 
-                overral_cpu_usage += float(line[8])
-                overral_memory_usage += float(line[9])
+                overral_cpu_usage += float(line[8].replace(",", "."))
+                overral_memory_usage += float(line[9].replace(",", "."))
 
             #print("Overral CPU usage:", overral_cpu_usage, "Overral Memory usage:", overral_memory_usage)
 
@@ -76,7 +76,7 @@ def ComputerLoadAvarage(file):
 
     with open(file, 'r') as f:
         line = f.readline().split()
-        weight = line[8]
+        weight = line[8].replace(",", ".")
         weight = weight[0:-1]
         LoadAvarage = float(weight)
 
@@ -91,7 +91,7 @@ def ComputerUsedMemory(file):
         f.readline()
 
         line = f.readline().split()
-        UsedMemory = float(line[2])
+        UsedMemory = float(line[2].replace(",", "."))
 
     return UsedMemory
 
@@ -106,8 +106,8 @@ def ComputerActiveInactiveMemory(file):
         f.readline()
 
         line = f.readline().split()
-        ActiveMemory = float(line[5])
-        InactiveMemory = float(line[4])
+        ActiveMemory = float(line[5].replace(",", "."))
+        InactiveMemory = float(line[4].replace(",", "."))
 
     return ActiveMemory, InactiveMemory
 
@@ -247,10 +247,10 @@ def plot1(samples):
     plt.xlabel('Tests')
     plt.ylabel('CPU mean usage')
     plt.title('CPU mean vs Tests')
-    plt.legend(["CPU usage without navigators",
-                "Overral CPU usage w/chrome",
+    plt.legend(["CPU usage without browsers",
+                "Overrall CPU usage w/chrome",
                 "Chrome CPU usage",
-                "Overral CPU usage w/firefox",
+                "Overrall CPU usage w/firefox",
                 "Firefox CPU usage"])
 
     plt.show()
@@ -310,10 +310,10 @@ def plot2(samples):
     plt.xlabel('Tests')
     plt.ylabel('Memory mean usage')
     plt.title('Memory mean vs Tests')
-    plt.legend(["MEM usage without navigators",
-                "Overral MEM usage w/chrome",
+    plt.legend(["MEM usage without browsers",
+                "Overrall MEM usage w/chrome",
                 "Chrome MEM usage",
-                "Overral MEM usage w/firefox",
+                "Overrall MEM usage w/firefox",
                 "Firefox MEM usage"])
 
     plt.show()
@@ -360,9 +360,9 @@ def plot3(samples):
     plt.xlabel('Tests')
     plt.ylabel('Load Avarage mean')
     plt.title('Load Avarage mean vs Tests')
-    plt.legend(["Load Avarage without navigators",
-                "Chrome L.A. usage",
-                "Firefox L.A. usage"])
+    plt.legend(["Load Avarage without browsers",
+                "Overrall L.A. w/chrome",
+                "Overrall L.A. w/firefox"])
 
     plt.show()
 
@@ -406,9 +406,9 @@ def plot4(samples):
     plt.xlabel('Tests')
     plt.ylabel('Used Memory mean')
     plt.title('Used Memory mean vs Tests')
-    plt.legend(["Used Memory without navigators",
-                "Chrome U.M usage",
-                "Firefox U.M usage"])
+    plt.legend(["Used Memory without browsers",
+                "Overrall U.M w/chrome",
+                "Overrall U.M c/firefox"])
 
     plt.show()
 
@@ -451,9 +451,9 @@ def plot5(samples):
     plt.xlabel('Tests')
     plt.ylabel('Active Memory mean')
     plt.title('Active Memory mean vs Tests')
-    plt.legend(["Active Memory without navigators",
-                "Chrome A.M. usage",
-                "Firefox A.M usage"])
+    plt.legend(["Active Memory without browsers",
+                "Overall A.M. w/chrome",
+                "Overall A.M. w/firefox"])
 
     plt.show()
 
@@ -496,9 +496,9 @@ def plot6(samples):
     plt.xlabel('Tests')
     plt.ylabel('Inactive Memory mean')
     plt.title('Inactive Memory mean vs Tests')
-    plt.legend(["Inactive Memory without navigators",
-                "Chrome I.M. usage",
-                "Firefox I.M usage"])
+    plt.legend(["Inactive Memory without browsers",
+                "Overall I.M. w/chrome",
+                "Overall I.M. w/firefox"])
 
     plt.show()
 
@@ -541,7 +541,7 @@ def main():
 
     samples = []
 
-    for i in range(1,6):
+    for i in range(1,9):
 
         sample = Sample()
 
@@ -614,7 +614,7 @@ def main():
 
         samples.append(sample)
 
-    # printSamples(samples)
+    printSamples(samples)
     # print(samples[0].chrome_system_cpu_usage)
     # print(len(samples[0].chrome_system_cpu_usage))
 

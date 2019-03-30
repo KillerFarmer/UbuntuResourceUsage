@@ -1,0 +1,71 @@
+
+
+
+#
+# Get Firefox Performance Changes
+#
+
+# Get overral and Google Chrome CPU and Memory percentage utilization
+top -n 1 -b > FirefoxUtilization 
+
+# Get Load Avarage when Chrome
+uptime > FirefoxLoadAvarage
+
+# Get Memory status in KB
+free -b kilo > FirefoxMemoryStatus
+
+# get Active and Inactive memory info
+vmstat -a -S k > FirefoxActiveInactiveMemory
+
+
+There  are  11  tests  that  will  be  done  to  each  navigatorusing the already mentioned tools. The 11 tests are:
+
+	1)To  measure  the  navigator  performance  just  afterbeen opened(1 tab).
+
+	2)To measure the navigator performance with 10 tabs,each one in their home page.
+
+	3)To measure the navigator performance with 10 tabs,each been in a Wikipedia article.Articles:
+
+		a) https://en.wikipedia.org/wiki/Aurora
+		b) https://en.wikipedia.org/wiki/Number_theory
+		c) https://en.wikipedia.org/wiki/Unity_(game_engine)
+		d) https://en.wikipedia.org/wiki/Wikipedia
+		e) https://en.wikipedia.org/wiki/CodePen
+		f) https://en.wikipedia.org/wiki/Unreal_Engine
+		g) https://en.wikipedia.org/wiki/Pygame
+		h) https://en.wikipedia.org/wiki/Computer_graphics_(computer_science)
+		i) https://en.wikipedia.org/wiki/Macaw 
+		j) https://en.wikipedia.org/wiki/Whale
+
+	4)To  measure  the  navigator  performance  playing  aYouTube video (1 tab).
+		
+		a) https://www.youtube.com/watch?v=xuCn8ux2gbs
+
+	5)To  measure  the  navigator  performance  playing  5YouTube videos (5 tabs).
+
+		a)https://www.youtube.com/watch?v=xuCn8ux2gbs
+		b)https://www.youtube.com/watch?v=l0vfLGHoREU
+		c)https://www.youtube.com/watch?v=Mh5LY4Mz15o
+		d)https://www.youtube.com/watch?v=bFSnXNIsK4A
+		e)https://www.youtube.com/watch?v=9oWOsocN7qg
+
+	6)To  measure  the  navigator  performance  being  inwindy.com (1tab).
+	
+	7)To  measure  the  navigator  performance  being  in  aWebGL application of CodePen.com
+
+		a)https://codepen.io/ImagineProgramming/pen/LpOJzM
+
+	8)To  measure  the  navigator  performance  with  two windows open, both in their home page
+
+	9)To  measure  the  navigator  performance  with  twowindows open, both playing different videos.
+
+		a)https://www.youtube.com/watch?v=xuCn8ux2gbs
+		b)https://www.youtube.com/watch?v=l0vfLGHoREU
+
+	10)To  measure  the  navigator  performance  with  twowindows open, both being in windy.com
+	
+	11)To  measure  the  navigator  performance  with  twowindows  opened,  both  executing  different  WebGLapplications from CodePen.com.
+
+		a)https://codepen.io/ImagineProgramming/pen/LpOJzM
+		b)https://codepen.io/unmeshpro/pen/orhKk
+

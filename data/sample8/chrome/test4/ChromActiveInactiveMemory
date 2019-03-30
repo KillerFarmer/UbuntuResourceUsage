@@ -1,0 +1,3 @@
+procs -----------memoria---------- ---swap-- -----io---- -sistema-- ------cpu-----
+ r  b   swpd  libre inactiv activa   si   so    bi    bo   in   cs us sy id wa st
+ 2  0      0 3191263 895062 1821970    0    0   165    45  163  435  4  1 90  5  0

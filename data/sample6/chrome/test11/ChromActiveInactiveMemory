@@ -1,0 +1,3 @@
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free  inact active   si   so    bi    bo   in   cs us sy id wa st
+ 5  0      0 3904950 1658449 2373230    0    0   261   204  560 1737 22  6 69  4  0
