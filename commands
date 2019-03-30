@@ -1,0 +1,52 @@
+#
+# Overral Performance
+#
+
+# Get overral CPU and Memory percentage utilization
+top -n 1 -b > utilization
+
+# Get overral Load Avarage
+uptime > loadAvarage
+
+# get Memory status in KB
+free -K > memoryStatus
+
+# get Active and Inactive memory info
+vmstat -a -S k > activeInactiveMemory
+
+
+
+#
+# Get Google Chrome Performance Changes
+#
+
+# Get overral and Google Chrome CPU and Memory percentage utilization
+top -n 1 -b > C_utilization | grep chrome >> ChromeUtilization
+
+# Get Load Avarage when Chrome
+uptime > ChromeLoadAvarage
+
+# Get Memory status in KB
+free -K > ChromeMemoryStatus
+
+# get Active and Inactive memory info
+vmstat -a -S k > ChromActiveInactiveMemory
+
+
+#
+# Get Firefox Performance Changes
+#
+
+# Get overral and Google Chrome CPU and Memory percentage utilization
+top -n 1 -b > F_utilization | grep firefox >> FirefoxUtilization
+
+# Get Load Avarage when Chrome
+uptime > FirefoxLoadAvarage
+
+# Get Memory status in KB
+free -K > FirefoxMemoryStatus
+
+# get Active and Inactive memory info
+vmstat -a -S k > FirefoxActiveInactiveMemory
+
+
